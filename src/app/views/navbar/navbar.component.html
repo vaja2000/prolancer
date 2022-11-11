@@ -24,12 +24,15 @@
         >კონტაქტი</li>
     </ul>
     <!-- authentication field -->
-    <div class="authentication">
-        <button mat-raised-button>რეგისტრაცია</button>
-        <button mat-raised-button color="warn">შესვლა</button>
-    </div>
     <!-- userPage fieldd -->
-    <div class="userPage">
+    <div class="userPage"
+    *ngIf="userActive; else unAuthorized">
 
     </div>
+    <ng-template #unAuthorized>
+        <div class="authentication">
+            <button mat-raised-button>რეგისტრაცია</button>
+            <button mat-raised-button color="warn">შესვლა</button>
+        </div>
+    </ng-template>
 </nav>

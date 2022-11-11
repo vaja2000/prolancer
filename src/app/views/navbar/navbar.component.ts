@@ -7,12 +7,13 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  userActive:boolean = false
 
   constructor(private http:HttpService) { }
 
   ngOnInit(): void {
     this.http.getUserActive().subscribe((resp:any) => {
-      console.log(resp)
+      this.userActive = resp
     })
   }
 
