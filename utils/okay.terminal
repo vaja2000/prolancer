@@ -1,0 +1,10 @@
+cd documents
+cd github
+cd prolancer
+node utils/Server
+
+
+cd documents
+cd github
+cd prolancer
+ng serve

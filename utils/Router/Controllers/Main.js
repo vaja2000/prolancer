@@ -2,11 +2,11 @@ const Express = require("express")
 const Router = Express.Router()
 //const MySQL = require("./Utils/MySQL")
 
-Router.post("/IsLoggedIn", (Request, Response) => {
+Router.post("/UserLoggedIn", (Request, Response) => {
     if (Request.session.TokenID) {
-        Response.send(true)
+        Response.send("true")
     } else {
-        Response.send(false)
+        Response.send("false")
     }
 })
 
