@@ -11,7 +11,11 @@ export class HttpService {
   constructor(private http:HttpClient) {}
 
   getUserActive() {
-    return this.http.post<unknown>("http://localhost:8000/API/UserLoggedIn", null, {})
+
+    this.http.post(this.domain + "API/UserLoggedIn", null,{})
+    .subscribe((resp:any) => {
+      return resp
+    })
   }
 
 }
