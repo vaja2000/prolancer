@@ -11,6 +11,7 @@ export class HttpService {
   constructor(private http:HttpClient) {}
 
   getUserActive() {
-    return this.http.get("http://localhost:8000/API/UserLoggedIn", {method: "POST"})
+    return this.http.post<unknown>("http://localhost:8000/API/UserLoggedIn", null, {})
   }
+
 }
