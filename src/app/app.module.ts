@@ -14,6 +14,7 @@ import { HomeComponent } from './views/main/home/home.component';
 import { ServicesComponent } from './views/main/services/services.component';
 import { AboutUsComponent } from './views/main/about-us/about-us.component';
 import { ContactComponent } from './views/main/contact/contact.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -24,13 +25,14 @@ import { ContactComponent } from './views/main/contact/contact.component';
     HomeComponent,
     ServicesComponent,
     AboutUsComponent,
-    ContactComponent
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -22,6 +22,24 @@
                 margin-top: 15%;
                 font-family: BPG nino mtavruli;
             }
+            button {
+                height: 70px;
+                padding: 0px 10px;
+                border-radius: 50px;
+                border: 2px solid #FFFFFF;
+                color: #FFFFFF;
+                background-color: unset;
+                background: linear-gradient(to right, rgb(244, 67, 54) 45%, rgb(0, 0, 0, 0) 55%);
+                background-size: 240%;
+                background-position: 100%;
+                font-size: 20px;
+                font-family: BPG nino mtavruli;
+                transition: .2s linear;
+                cursor: pointer;
+                &:hover {
+                   
+                }
+            }
         }
         section:last-child {
             width: 35%;
