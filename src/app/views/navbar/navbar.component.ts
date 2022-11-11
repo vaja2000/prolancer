@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '@angular/common/http';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,14 +8,10 @@ import { HttpService } from '@angular/common/http';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http:HttpService) { }
 
   ngOnInit(): void {
-<<<<<<< Updated upstream
-  
-=======
-    
->>>>>>> Stashed changes
+    this.http.getUserActive()
   }
 
 
