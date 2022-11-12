@@ -11,8 +11,8 @@ export class HttpService {
   constructor(private http:HttpClient) {}
 
   getUserActive() {
-    return this.http.post(this.domain + "API/UserLoggedIn", null,{})
-    
+    return this.http.post(this.domain + "API/UserLoggedIn", null,{ })
+
   }
 
 
