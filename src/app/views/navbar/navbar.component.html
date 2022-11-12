@@ -10,23 +10,8 @@
         <li routerLink="/about-us" routerLinkActive="active">ჩვენს შესახებ</li>
         <li routerLink="/contact" routerLinkActive="active">კონტაქტი</li>
     </ul>
-    <!-- authentication field -->
-<<<<<<< HEAD
     <div class="authentication">
         <button mat-raised-button *ngIf="ShowRegister=='false'">რეგისტრაცია</button>
         <button mat-raised-button color="warn" *ngIf="ShowRegister=='true'">შესვლა</button>
     </div>
-=======
->>>>>>> edb9e4183393b215b167e0796c3e6b396fc99e68
-    <!-- userPage fieldd -->
-    <div class="userPage"
-    *ngIf="userActive; else unAuthorized">
-
-    </div>
-    <ng-template #unAuthorized>
-        <div class="authentication">
-            <button mat-raised-button>რეგისტრაცია</button>
-            <button mat-raised-button color="warn">შესვლა</button>
-        </div>
-    </ng-template>
 </nav>
