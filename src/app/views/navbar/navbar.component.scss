@@ -25,9 +25,10 @@ nav {
             color: #FFFFFF;
             cursor: pointer;
             transition: .3s linear;
-            padding-bottom: 10px;
+            padding: 10px 0;
             &:hover {
                 color: #fcd2cf;
+                border-bottom: 1px solid white;
             }
         }
         .active {
@@ -35,7 +36,7 @@ nav {
         }
     }
     .authentication {
-        width: 20%;
+        width: fit-content;
         button {
             font-family: BPG nino mtavruli;
             margin: 5px;
