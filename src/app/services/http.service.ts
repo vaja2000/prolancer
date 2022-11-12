@@ -12,7 +12,6 @@ export class HttpService {
 
   getUserActive() {
     return this.http.post(this.domain + "API/UserLoggedIn", null,{ })
-
   }
 
 

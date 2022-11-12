@@ -1,13 +1,19 @@
 .background {
     width: 100%;
+<<<<<<< HEAD
     height: 100vh;
     background: linear-gradient(280deg, #6787FE 0%, #0F1B63 100%);
+=======
+    height: 600px;
+    background-image: url(../../../../assets/pexels-photo-10838922.jpeg);
+>>>>>>> edb9e4183393b215b167e0796c3e6b396fc99e68
     display: flex;
     align-items: center;
     justify-content: center;
     background-attachment: fixed;
     font-family: BPG nino mtavruli;
     header {
+        margin-top: 70px;
         width: 1000px;
         height: 360px;
         display: flex;
@@ -19,12 +25,12 @@
             h1 {
                 font-size: 50px;
                 line-height: 1;
-                margin-top: 15%;
                 font-family: BPG nino mtavruli;
             }
             button {
                 height: 70px;
-                padding: 0px 10px;
+                padding: 0px 20px;
+                margin-top: 20px;
                 border-radius: 50px;
                 border: 2px solid #FFFFFF;
                 color: #FFFFFF;
@@ -32,7 +38,7 @@
                 background: linear-gradient(to right, white 45%, rgba(0, 0, 0, 0) 55%);
                 background-size: 240%;
                 background-position: 100%;
-                font-size: 20px;
+                font-size: 25px;
                 font-family: BPG nino mtavruli;
                 transition: .2s linear;
                 cursor: pointer;
