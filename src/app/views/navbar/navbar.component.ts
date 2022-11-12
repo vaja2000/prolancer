@@ -11,7 +11,9 @@ export class NavbarComponent implements OnInit {
   constructor(private http:HttpService) { }
 
   ngOnInit(): void {
-    this.http.getUserActive()
+    this.http.getUserActive().subscribe((resp:any) => {
+      console.log(resp)
+    })
   }
 
 
