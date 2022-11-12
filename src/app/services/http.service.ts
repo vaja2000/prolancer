@@ -6,16 +6,13 @@ import { Injectable } from '@angular/core';
 })
 export class HttpService {
 
-  domain:string = "http://localhost:8000"
+  domain:string = "http://localhost:8000/"
 
   constructor(private http:HttpClient) {}
 
   getUserActive() {
-    this.http.post(this.domain + "API/UserLoggedIn", null,{})
-    .subscribe((resp:any) => {
-      return resp
-    })
-    return this.http.post("http://localhost:8000/API/UserLoggedIn")
+    return this.http.post(this.domain + "API/UserLoggedIn", null,{})
   }
+
 
 }

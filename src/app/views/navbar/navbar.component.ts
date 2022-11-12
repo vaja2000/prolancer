@@ -10,11 +10,15 @@ export class NavbarComponent implements OnInit {
 
   constructor(private http:HttpService) { }
 
+  ShowRegister:string = "false"
+
   ngOnInit(): void {
-    this.http.getUserActive().subscribe((resp:any) => {
-      console.log(resp)
-    })
+    this.UserLoggedIn()
   }
 
-
+  UserLoggedIn() {
+    this.http.getUserActive().subscribe(data => {
+      this.ShowRegister = data.toString()
+    })
+  }
 }

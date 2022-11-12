@@ -25,8 +25,8 @@
     </ul>
     <!-- authentication field -->
     <div class="authentication">
-        <button mat-raised-button>რეგისტრაცია</button>
-        <button mat-raised-button color="warn">შესვლა</button>
+        <button mat-raised-button *ngIf="ShowRegister=='false'">რეგისტრაცია</button>
+        <button mat-raised-button color="warn" *ngIf="ShowRegister=='true'">შესვლა</button>
     </div>
     <!-- userPage fieldd -->
     <div class="userPage">
