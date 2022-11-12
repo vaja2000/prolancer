@@ -22,3 +22,4 @@ export class HttpService {
     return this.http.post(this.domain + "API/RegisterUser", null, { })
   }
 }
+
