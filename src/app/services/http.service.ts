@@ -19,6 +19,6 @@ export class HttpService {
   }
 
   registerUser(data: any) {
-    return this.http.post(this.domain + "API/RegisterUser", null,{ })
+    return this.http.post(this.domain + "API/RegisterUser", null, { })
   }
 }
