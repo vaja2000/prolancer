@@ -14,7 +14,8 @@ import { HomeComponent } from './views/main/home/home.component';
 import { ServicesComponent } from './views/main/services/services.component';
 import { AboutUsComponent } from './views/main/about-us/about-us.component';
 import { ContactComponent } from './views/main/contact/contact.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { LoginRegisterComponent } from './views/main/login-register/login-register.component'
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http'
     ServicesComponent,
     AboutUsComponent,
     ContactComponent,
+    LoginRegisterComponent,
   ],
   imports: [
     BrowserModule,
