@@ -156,4 +156,3 @@ Router.get("/Logout", (Request, Response) => {
 })
 
 module.exports = Router
-module.exports = Router
