@@ -4,7 +4,7 @@ var Connection = MySQL.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "ProLancer"
+    database: "ProLancerDatabase"
 });
 
 Connection.connect(function (Err) {
