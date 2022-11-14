@@ -1,17 +1,25 @@
 <nav>
     <!-- logo field -->
     <div class="logo">
-        <img src="../../../assets/Logo.svg" alt="">
+        <img src="../../../assets/Logo.svg"
+         alt=""
+         routerLink="/">
     </div>
     <!-- menu field -->
     <ul>
-        <li matRipple routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact:true }">მთავარი</li>
+        <li matRipple routerLink="/" 
+        routerLinkActive="active" 
+        [routerLinkActiveOptions]="{ exact:true }">მთავარი</li>
         <li routerLink="/services" routerLinkActive="active">სერვისები</li>
         <li routerLink="/about-us" routerLinkActive="active">ჩვენს შესახებ</li>
         <li routerLink="/contact" routerLinkActive="active">კონტაქტი</li>
     </ul>
     <div class="authentication">
-        <button routerLink="/loginregister" routerLinkActive="active"  mat-raised-button *ngIf="ShowRegister=='false'">რეგისტრაცია</button>
-        <button routerLink="/loginregister" routerLinkActive="active"  mat-raised-button color="warn" *ngIf="ShowRegister=='true'">შესვლა</button>
+        <button mat-raised-button
+        routerLink="/auth" 
+        *ngIf="ShowRegister=='false'">ავტორიზაცია</button>
+        <button
+        mat-raised-button color="warn" 
+        *ngIf="ShowRegister=='true'">შესვლა</button>
     </div>
 </nav>

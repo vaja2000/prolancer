@@ -15,7 +15,8 @@ import { ServicesComponent } from './views/main/services/services.component';
 import { AboutUsComponent } from './views/main/about-us/about-us.component';
 import { ContactComponent } from './views/main/contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginRegisterComponent } from './views/main/login-register/login-register.component'
+import { LoginRegisterComponent } from './views/main/login-register/login-register.component';
+import { AuthorizationComponent } from './views/authorization/authorization.component'
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { LoginRegisterComponent } from './views/main/login-register/login-regist
     AboutUsComponent,
     ContactComponent,
     LoginRegisterComponent,
+    AuthorizationComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,13 +14,9 @@ export class NavbarComponent implements OnInit {
   ShowRegister:string = "false"
 
   ngOnInit(): void {
-<<<<<<< Updated upstream
-    this.UserLoggedIn()
-=======
     this.http.getUserActive().subscribe((resp:any) => {
       console.log(resp)
     })
->>>>>>> Stashed changes
   }
 
   UserLoggedIn() {

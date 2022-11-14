@@ -1,0 +1,35 @@
+.background {
+    width: 100%;
+    background: linear-gradient(280deg, #7300e6 0%, #330066 100%);
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: BPG nino mtavruli;
+    .authorization {
+        margin-top: 60px;
+        width: 1300px;
+        height: 500px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .image {
+            width: 46%;
+            height: 100%;
+            background-image: url("../../../assets/Lovepik_com-450111337-Trendy\ flat\ illustration\ of\ server\ login.png");
+            background-size: cover;
+        }
+        form {
+            box-sizing: border-box;
+            padding: 20px;
+            width: 35%;
+            height: 100%;
+            background-color: #FFFFFF;
+            border-radius: 20px;
+            button {
+                margin: 10px;
+                font-family: BPG nino mtavruli;
+            }
+        }
+    }
+}
