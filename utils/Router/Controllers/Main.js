@@ -10,8 +10,4 @@ Router.post("/UserLoggedIn", (Request, Response) => {
     }
 })
 
-Router.get("/IsLoggedIn", (Request, Response) => {
-    Response.send("wOHOOO")
-})
-
 module.exports = Router
