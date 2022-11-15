@@ -1,0 +1,39 @@
+<form 
+[formGroup]="userRegistracion"
+(submit)="submitData()">
+    <section class="firstname_lastname">
+        <section class="field">
+            <fa-icon [icon] = "faUser"></fa-icon>
+            <input type="text"
+            placeholder="სახელი"
+            formControlName="firstName">
+        </section>
+        <section class="field">
+            <fa-icon [icon] = "faUser"></fa-icon>
+            <input type="text"
+            placeholder="გვარი"
+            formControlName="lastName">
+        </section>
+    </section>
+    <section class="field">
+        <fa-icon [icon] = "faEnvelope"></fa-icon>
+        <input type="email"
+        placeholder="იმეილი"
+        formControlName="email">
+    </section>
+    <section class="field">
+        <fa-icon [icon] = "faKey"></fa-icon>
+        <input type="password"
+        placeholder="პაროლი"
+        formControlName="password">
+    </section>
+    <section class="field">
+        <fa-icon [icon] = "faKey"></fa-icon>
+        <input type="password"
+        placeholder="დაადასტურეთ პაროლი"
+        formControlName="confirmePassword">
+    </section>
+    <div>
+        <button mat-raised-button color="primary">რეგისტრაცია</button>
+    </div>
+</form>

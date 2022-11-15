@@ -1,23 +1,22 @@
 <div class="background">
     <div class="authorization">
         <section class="image"></section>
-        <form>
-            <section class="logIn&SignUp">
+        <div class="form">
+            <section class="logInSignUp">
                 <button mat-raised-button 
                 [color]="loginBtn"
                 (click)="login()"
-                type="button">შესვლა</button>
+                type="button">ავტორიზაცია</button>
                 <button mat-raised-button 
                 [color]="signUpBtn"
                 (click)="signUp()"
                 type="button">რეგისტრაცია</button>
             </section>
-            <section>
-
-            </section>
-            <ng-template>
-                
-            </ng-template>
-        </form>
+            <div class="form_content">
+                <app-login *ngIf="loginBtn=='primary'"></app-login>
+                <app-signup *ngIf="signUpBtn=='primary'"></app-signup>
+            </div>
+            <p>დაგავიწყდა პაროლი?</p>
+        </div>
     </div>
 </div>

@@ -15,8 +15,11 @@ import { ServicesComponent } from './views/main/services/services.component';
 import { AboutUsComponent } from './views/main/about-us/about-us.component';
 import { ContactComponent } from './views/main/contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginRegisterComponent } from './views/main/login-register/login-register.component';
-import { AuthorizationComponent } from './views/authorization/authorization.component'
+import { AuthorizationComponent } from './views/authorization/authorization.component';
+import { LoginComponent } from './views/authorization/login/login.component';
+import { SignupComponent } from './views/authorization/signup/signup.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,15 +31,18 @@ import { AuthorizationComponent } from './views/authorization/authorization.comp
     ServicesComponent,
     AboutUsComponent,
     ContactComponent,
-    LoginRegisterComponent,
     AuthorizationComponent,
+    LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule,
+    FormsModule,ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
