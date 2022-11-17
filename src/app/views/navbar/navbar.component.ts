@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
 
 @Component({
@@ -15,6 +15,17 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.UserLoggedIn()
+  }
+
+  navbarBackgroundColor:string = "transparent"
+
+  @HostListener("document:scroll")
+  onScroll() {
+    if (window.scrollY > 70) {
+      this.navbarBackgroundColor = "#5875e4"
+    } else {
+      this.navbarBackgroundColor = "transparent"
+    }
   }
 
   UserLoggedIn() {

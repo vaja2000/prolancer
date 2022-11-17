@@ -1,11 +1,12 @@
 nav {
-    width: 1400px;
+    width: 100%;
     height: 120px;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: BPG nino mtavruli;
+    transition: 0.5s background-color;
     .logo {
         width: 18%;
         img {
