@@ -6,7 +6,7 @@ const Hash = require("../Utils/Hash")
 
 function CapitalizeFirstLetter(String) {
     return String.charAt(0).toUpperCase() + String.slice(1);
-  }
+}
 
 Router.post("/UserLoggedIn", (Request, Response) => {
     if (Request.session.TokenID) {
@@ -97,6 +97,12 @@ Router.post("/RegisterUser", (Request, Response) => {
             return
         }
 
+
+        if (!Body.Email) {
+            Response.send("Please type an email.").status(200)
+            return
+        }
+
         MySQL(`SELECT * FROM Accounts WHERE Username = "${Body.Username}"`, function(Data) {
             if (Data.length > 0) {
                 Response.send("Username taken.").status(200)
@@ -135,11 +141,12 @@ Router.post("/RegisterUser", (Request, Response) => {
             var Status = 0
             var Balance = 0.00
             var Username = CapitalizeFirstLetter(Body.Username)
+            var Email = Body.Email
 
             MySQL(`INSERT INTO Accounts 
-            (Firstname, Lastname, Password, Token, Status, Balance, Username) 
+            (Firstname, Lastname, Password, Token, Status, Balance, Username, Email) 
             VALUES 
-            ('${Firstname}','${Lastname}','${Password}','${Token}','${Status}','${Balance}','${Username}')`, (Callback) => {
+            ('${Firstname}','${Lastname}','${Password}','${Token}','${Status}','${Balance}','${Username}','${Email}' )`, (Callback) => {
                 Request.session.TokenID = Token
                 Response.send("200")
             })

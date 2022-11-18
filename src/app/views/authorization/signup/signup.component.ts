@@ -30,7 +30,7 @@ export class SignupComponent implements OnInit {
   }
 
   submitData() {
-    this.http.registerUser(this.userRegistracion.value).subscribe((resp:any) => {
+    this.http.registerUser(this.userRegistracion.value).subscribe((resp) => {
       console.log(resp)
     })
   }
