@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { faUser, faEnvelope, faKey } from '@fortawesome/free-solid-svg-icons';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-signup',
@@ -15,9 +16,11 @@ export class SignupComponent implements OnInit {
 
   userRegistracion:any
 
-  constructor() { }
+  constructor(private http:HttpService) { }
 
   ngOnInit(): void {
+
+
     this.userRegistracion = new FormGroup({
       'firstName': new FormControl( null, [ Validators.required, Validators.minLength(2) ] ),
       'lastName': new FormControl( null, [ Validators.required, Validators.minLength(2) ] ),
@@ -25,8 +28,13 @@ export class SignupComponent implements OnInit {
       'password': new FormControl( null, [ Validators.required, Validators.minLength(8) ] ),
       'confirmePassword': new FormControl( null, [ Validators.required, Validators.minLength(8) ] ),
     })
+
+    this.submitData()
   }
+
   submitData() {
-    console.log(this.userRegistracion.value)
+    this.http.registerUser(this.userRegistracion.value).subscribe(data => {
+      console.log(data);
+    })
   }
 }
