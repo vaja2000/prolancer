@@ -24,17 +24,16 @@ export class SignupComponent implements OnInit {
     this.userRegistracion = new FormGroup({
       'firstName': new FormControl( null, [ Validators.required, Validators.minLength(2) ] ),
       'lastName': new FormControl( null, [ Validators.required, Validators.minLength(2) ] ),
+      'userName': new FormControl( null, [ Validators.required, Validators.minLength(5)] ),
       'email': new FormControl( null, [ Validators.required, Validators.email ] ),
       'password': new FormControl( null, [ Validators.required, Validators.minLength(8) ] ),
       'confirmePassword': new FormControl( null, [ Validators.required, Validators.minLength(8) ] ),
     })
-
-    this.submitData()
   }
 
   submitData() {
-    this.http.registerUser(this.userRegistracion.value).subscribe(data => {
-      console.log(data);
+    this.http.registerUser(this.userRegistracion.value).subscribe((resp:any) => {
+      console.log(resp)
     })
   }
 }
