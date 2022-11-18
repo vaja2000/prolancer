@@ -2,7 +2,8 @@
 [formGroup]="userRegistracion"
 (submit)="submitData()">
     <section class="firstname_lastname">
-        <section class="field">
+        <section class="field"
+        [ngClass]="{'fieldError': !userRegistracion.get('firstName').valid && userRegistracion.dirty}">
             <fa-icon [icon] = "faUser"></fa-icon>
             <input type="text"
             placeholder="სახელი"
@@ -15,29 +16,39 @@
             formControlName="lastName">
         </section>
     </section>
+    <div class="error">
+        <div></div>
+        <div></div>
+    </div>
     <section class="field">
         <fa-icon  [icon] = "faUser"></fa-icon>
         <input type="text" placeholder="ზედმეტსახელი">
     </section>
+    <div class="error"></div>
     <section class="field">
         <fa-icon [icon] = "faEnvelope"></fa-icon>
         <input type="email"
         placeholder="იმეილი"
         formControlName="email">
     </section>
+    <div class="error"></div>
     <section class="field">
         <fa-icon [icon] = "faKey"></fa-icon>
         <input type="password"
         placeholder="პაროლი"
         formControlName="password">
     </section>
+    <div class="error"></div>
     <section class="field">
         <fa-icon [icon] = "faKey"></fa-icon>
         <input type="password"
         placeholder="დაადასტურეთ პაროლი"
         formControlName="confirmePassword">
     </section>
+    <div class="error"></div>
     <div>
-        <button mat-raised-button color="primary">რეგისტრაცია</button>
+        <button mat-raised-button color="primary"
+        [disabled]="userRegistracion.invalid"
+        >რეგისტრაცია</button>
     </div>
 </form>

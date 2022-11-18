@@ -12,7 +12,7 @@ form {
         border: 3px solid #6787FE;
         margin-bottom: 40px;
         border-radius: 9px;
-        box-shadow: 20px 20px 20px 0px rgb(0, 0, 0, 0.5)
+        box-shadow: 20px 20px 20px 0px rgb(0, 0, 0, 0.5);
         fa-icon {
             font-size: 30px;
             color: #5400A8;
@@ -25,6 +25,9 @@ form {
             width: 80%;
             height: 80%;
             color: #26004d;
+            &::placeholder {
+                color: #bfbfbf;
+            }
         }
     }
     div {

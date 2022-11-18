@@ -17,17 +17,6 @@ export class NavbarComponent implements OnInit {
     this.UserLoggedIn()
   }
 
-  navbarBackgroundColor:string = "transparent"
-
-  @HostListener("document:scroll")
-  onScroll() {
-    if (window.scrollY > 70) {
-      this.navbarBackgroundColor = "#5875e4"
-    } else {
-      this.navbarBackgroundColor = "transparent"
-    }
-  }
-
   UserLoggedIn() {
     this.http.getUserActive().subscribe(data => {
       this.ShowRegister = data.toString()
