@@ -21,6 +21,7 @@ import { SignupComponent } from './views/authorization/signup/signup.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { ScrollNavbarBgDirective } from './directives/scroll-navbar-bg.directive';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { RouterModule } from '@angular/router';
     AuthorizationComponent,
     LoginComponent,
     SignupComponent,
+    ScrollNavbarBgDirective,
   ],
   imports: [
     BrowserModule,

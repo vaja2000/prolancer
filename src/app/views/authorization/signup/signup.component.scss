@@ -10,26 +10,29 @@ form {
         box-sizing: border-box;
         padding: 0px 15px;
         border: 3px solid #6787FE;
-        margin-bottom: 25px;
         border-radius: 9px;
-        box-shadow: 20px 20px 20px 0px rgb(0, 0, 0, 0.5)
         fa-icon {
             font-size: 20px;
             color: #5400A8;
         }
         input {
             font-size: 15px;
-            font-family: BPG nino mtavruli;
+            font-family: cursive;
             outline: none;
             border: none;
             width: 80%;
             height: 80%;
             color: #26004d;
             &::placeholder {
-                font-family: BPG nino mtavruli;
                 color: #bfbfbf;
             }
         }
+    }
+    .error {
+        height: 25px;
+    }
+    .fieldError {
+        border: 3px solid #fe1818;
     }
     .firstname_lastname {
         display: flex;
