@@ -19,15 +19,13 @@ export class SignupComponent implements OnInit {
   constructor(private http:HttpService) { }
 
   ngOnInit(): void {
-
-
     this.userRegistracion = new FormGroup({
-      'firstName': new FormControl( null, [ Validators.required, Validators.minLength(2) ] ),
-      'lastName': new FormControl( null, [ Validators.required, Validators.minLength(2) ] ),
-      'userName': new FormControl( null, [ Validators.required, Validators.minLength(5)] ),
-      'email': new FormControl( null, [ Validators.required, Validators.email ] ),
-      'password': new FormControl( null, [ Validators.required, Validators.minLength(8) ] ),
-      'confirmePassword': new FormControl( null, [ Validators.required, Validators.minLength(8) ] ),
+      'Firstname': new FormControl( null, [ Validators.required, Validators.minLength(2) ] ),
+      'Lastname': new FormControl( null, [ Validators.required, Validators.minLength(2) ] ),
+      'Username': new FormControl( null, [ Validators.required, Validators.minLength(5)] ),
+      'Email': new FormControl( null, [ Validators.required, Validators.email ] ),
+      'Password': new FormControl( null, [ Validators.required, Validators.minLength(8) ] ),
+      'ConfirmPassword': new FormControl( null, [ Validators.required, Validators.minLength(8) ] ),
     })
   }
 
