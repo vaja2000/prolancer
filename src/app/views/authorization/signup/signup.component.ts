@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { faUser, faEnvelope, faKey } from '@fortawesome/free-solid-svg-icons';
 import { HttpService } from 'src/app/services/http.service';
+import { ModalComponent } from 'src/app/modal/modal.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-signup',
@@ -16,7 +18,7 @@ export class SignupComponent implements OnInit {
 
   userRegistracion:any
 
-  constructor(private http:HttpService) { }
+  constructor(private http:HttpService, private dialogRef: MatDialog) { }
 
   ngOnInit(): void {
     this.userRegistracion = new FormGroup({
@@ -30,8 +32,12 @@ export class SignupComponent implements OnInit {
   }
 
   submitData() {
-    this.http.registerUser(this.userRegistracion.value).subscribe((resp) => {
-      console.log(resp)
+    this.http.registerUser(this.userRegistracion.value).subscribe(Res => {
+      this.openDialog(Res);
     })
+  }
+
+  openDialog(Res: any) {
+    this.dialogRef.open(ModalComponent)
   }
 }

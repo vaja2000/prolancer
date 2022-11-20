@@ -9,13 +9,12 @@ form {
         justify-content: space-between;
         box-sizing: border-box;
         padding: 0px 15px;
-        border: 3px solid #6787FE;
+        border: 1px solid #96adff;
         margin-bottom: 40px;
-        border-radius: 9px;
-        box-shadow: 20px 20px 20px 0px rgb(0, 0, 0, 0.5);
+        border-radius: 60px;
         fa-icon {
-            font-size: 30px;
-            color: #5400A8;
+            font-size: 18px;
+            color: #5673e0;
         }
         input {
             font-size: 15px;
@@ -39,6 +38,7 @@ form {
             margin: auto;
             font-family: BPG nino mtavruli;
             font-size: 20px;
+            border-radius: 60px;
         }
     }
 }
