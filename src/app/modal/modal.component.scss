@@ -1,0 +1,27 @@
+button {
+    padding: 10px 20px;
+    font-family: BPG nino mtavruli;
+    border-radius: 60px;
+    border: none;
+    transition: 0.5s!important;
+    background-color: rgb(103 135 254 / 10%);;
+    color: #4A6375;
+    box-shadow: none;
+}                
+
+button:hover {
+    font-family: BPG nino mtavruli;
+    border-radius: 60px;
+    background-color: rgb(103 135 254 / 30%);
+    color: rgb(103, 136, 254);
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

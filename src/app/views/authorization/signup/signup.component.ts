@@ -18,7 +18,9 @@ export class SignupComponent implements OnInit {
 
   userRegistracion:any
 
-  constructor(private http:HttpService, private dialogRef: MatDialog) { }
+  constructor(private http:HttpService, private dialogRef: MatDialog) {
+
+   }
 
   ngOnInit(): void {
     this.userRegistracion = new FormGroup({
@@ -37,7 +39,10 @@ export class SignupComponent implements OnInit {
     })
   }
 
+
   openDialog(Res: any) {
-    this.dialogRef.open(ModalComponent)
+    this.dialogRef.open(ModalComponent, {
+      data: Res
+    })
   }
 }
