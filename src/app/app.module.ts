@@ -22,6 +22,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ScrollNavbarBgDirective } from './directives/scroll-navbar-bg.directive';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { ScrollNavbarBgDirective } from './directives/scroll-navbar-bg.directive
     LoginComponent,
     SignupComponent,
     ScrollNavbarBgDirective,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { ScrollNavbarBgDirective } from './directives/scroll-navbar-bg.directive
     HttpClientModule,
     FontAwesomeModule,
     FormsModule,ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

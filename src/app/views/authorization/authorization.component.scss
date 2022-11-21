@@ -34,6 +34,19 @@
                 button {
                     margin: 10px;
                     font-family: BPG nino mtavruli;
+                    border-radius: 60px;
+                    transition: 0.5s!important;
+                    background-color: transparent;
+                    color: #4A6375;
+                    box-shadow: none;
+                }                
+
+                button.mat-primary {
+                    margin: 10px;
+                    font-family: BPG nino mtavruli;
+                    border-radius: 60px;
+                    background-color: rgb(103 135 254 / 10%);
+                    color: rgb(103, 136, 254);
                 }
             }
             .form_content {
@@ -41,6 +54,9 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                app-signup {
+                    width: 100%;
+                }
             }
             p {
                 cursor: pointer;
