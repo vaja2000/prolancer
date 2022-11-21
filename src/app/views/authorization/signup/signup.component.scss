@@ -30,6 +30,15 @@ form {
     }
     .error {
         height: 25px;
+        display: flex;
+        justify-content: space-between;
+        div {
+            width: 50%;
+        }
+        p {
+            color: #fe1818;
+            font-size: 10px;
+        }
     }
     .fieldError {
         border: 3px solid #fe1818;

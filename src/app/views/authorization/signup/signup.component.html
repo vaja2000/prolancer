@@ -1,15 +1,17 @@
 <form 
 [formGroup]="userRegistracion"
 (submit)="submitData()">
+    <!-- firstname and lastname -->
     <section class="firstname_lastname">
         <section class="field"
-        [ngClass]="{'fieldError': !userRegistracion.get('Firstname').valid && userRegistracion.dirty}">
+        [ngClass]="{'fieldError': !userRegistracion.get('Firstname').valid && userRegistracion.get('Firstname').dirty}">
             <fa-icon [icon] = "faUser"></fa-icon>
             <input type="text"
             placeholder="სახელი"
             formControlName="Firstname">
         </section>
-        <section class="field">
+        <section class="field"
+        [ngClass]="{'fieldError': !userRegistracion.get('Lastname').valid && userRegistracion.get('Lastname').dirty}">
             <fa-icon [icon] = "faUser"></fa-icon>
             <input type="text"
             placeholder="გვარი"
@@ -17,37 +19,110 @@
         </section>
     </section>
     <div class="error">
-        <div>ველის შევსება აუცილებელია!</div>
-        <div></div>
+        <div>
+            <p 
+            *ngIf="userRegistracion.get('Firstname').hasError('required') &&
+            userRegistracion.get('Firstname').dirty"
+            >ველის შევსება აუცილებელია!</p>
+            <p
+            *ngIf="userRegistracion.get('Firstname').invalid &&
+            userRegistracion.get('Firstname').dirty && 
+            !userRegistracion.get('Firstname').hasError('required')"
+            >მინიმუმ 2 ასობგერა!</p>
+        </div>
+        <div>
+            <p 
+            *ngIf="userRegistracion.get('Lastname').hasError('required') &&
+            userRegistracion.get('Lastname').dirty"
+            >ველის შევსება აუცილებელია!</p>
+            <p
+            *ngIf="userRegistracion.get('Lastname').invalid &&
+            userRegistracion.get('Lastname').dirty && 
+            !userRegistracion.get('Lastname').hasError('required')"
+            >მინიმუმ 2 ასობგერა!</p>
+        </div>
     </div>
-    <section class="field">
+    <!-- username field -->
+    <section class="field"
+    [ngClass]="{'fieldError': !userRegistracion.get('Username').valid && userRegistracion.get('Username').dirty}">
         <fa-icon  [icon] = "faUser"></fa-icon>
         <input type="text" 
         placeholder="ზედმეტსახელი"
         formControlName="Username">
     </section>
-    <div class="error"></div>
-    <section class="field">
+    <div class="error">
+        <p 
+        *ngIf="userRegistracion.get('Username').hasError('required') &&
+        userRegistracion.get('Username').dirty"
+        >ველის შევსება აუცილებელია!</p>
+        <p
+        *ngIf="userRegistracion.get('Username').invalid &&
+        userRegistracion.get('Username').dirty && 
+        !userRegistracion.get('Username').hasError('required')"
+        >მინიმუმ 5 ასობგერა!</p>
+    </div>
+    <!-- email field -->
+    <section class="field"
+    [ngClass]="{'fieldError': !userRegistracion.get('Email').valid && userRegistracion.get('Email').dirty}">
         <fa-icon [icon] = "faEnvelope"></fa-icon>
         <input type="email"
         placeholder="იმეილი"
         formControlName="Email">
     </section>
-    <div class="error"></div>
-    <section class="field">
+    <div class="error">
+        <p 
+        *ngIf="userRegistracion.get('Email').hasError('required') &&
+        userRegistracion.get('Email').dirty"
+        >ველის შევსება აუცილებელია!</p>
+        <p
+        *ngIf="userRegistracion.get('Email').invalid &&
+        userRegistracion.get('Email').dirty && 
+        !userRegistracion.get('Email').hasError('required') &&
+        userRegistracion.get('Email').hasError('email') ||
+        userRegistracion.get('Email').hasError('pattern')"
+        >შეიყვანეთ სწორი ელფოსტა!</p>
+    </div>
+    <!-- password field -->
+    <section class="field"
+    [ngClass]="{'fieldError': !userRegistracion.get('Password').valid && userRegistracion.get('Password').dirty}">
         <fa-icon [icon] = "faKey"></fa-icon>
         <input type="password"
         placeholder="პაროლი"
         formControlName="Password">
     </section>
-    <div class="error"></div>
-    <section class="field">
+    <div class="error">
+        <p 
+        *ngIf="userRegistracion.get('Password').hasError('required') &&
+        userRegistracion.get('Password').dirty"
+        >ველის შევსება აუცილებელია!</p>
+        <p
+        *ngIf="userRegistracion.get('Password').invalid &&
+        userRegistracion.get('Password').dirty && 
+        !userRegistracion.get('Password').hasError('required')"
+        >მინიმუმ 8 სიმბოლო!</p>
+        <p
+        >უნდა შეიცავდეს: 1 დიდ ასოს, 1 პატარა ასოს და 1 ციფრს მაინც!</p>
+    </div>
+    <!-- confirm password field -->
+    <section class="field"
+    [ngClass]="{'fieldError': !userRegistracion.get('ConfirmPassword').valid && userRegistracion.get('ConfirmPassword').dirty}">
         <fa-icon [icon] = "faKey"></fa-icon>
         <input type="password"
         placeholder="დაადასტურეთ პაროლი"
         formControlName="ConfirmPassword">
     </section>
-    <div class="error"></div>
+    <div class="error">
+        <p 
+        *ngIf="userRegistracion.get('ConfirmPassword').hasError('required') &&
+        userRegistracion.get('ConfirmPassword').dirty"
+        >ველის შევსება აუცილებელია!</p>
+        <p
+        *ngIf="userRegistracion.get('ConfirmPassword').invalid &&
+        userRegistracion.get('ConfirmPassword').dirty && 
+        !userRegistracion.get('ConfirmPassword').hasError('required')"
+        >მინიმუმ 8 ასობგერა!</p>
+    </div>
+    <!-- submit button field -->
     <div>
         <button mat-raised-button color="primary"
         [disabled]="userRegistracion.invalid"
