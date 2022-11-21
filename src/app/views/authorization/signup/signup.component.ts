@@ -15,8 +15,9 @@ export class SignupComponent implements OnInit {
   faUser = faUser
   faEnvelope = faEnvelope
   faKey = faKey
-  emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$';
-  passwordPattern = '/^(?=\D*\d)(?=[^a-z]*[a-z])(?=[^A-Z]*[A-Z]).{8,30}$/'
+  emailPattern:string = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$';
+  textPattern:string = '^[a-zA-Z]+$'
+  passwordPattern:string = '(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[A-Za-z\d$@$!%*?&].{8,}'
 
   userRegistracion:any
 
@@ -26,20 +27,19 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {
     this.userRegistracion = new FormGroup({
-      'Firstname': new FormControl( null, [ Validators.required, Validators.minLength(2) ] ),
-      'Lastname': new FormControl( null, [ Validators.required, Validators.minLength(2) ] ),
+      'Firstname': new FormControl( null, [ Validators.required, Validators.minLength(2), Validators.pattern(this.textPattern) ] ),
+      'Lastname': new FormControl( null, [ Validators.required, Validators.minLength(2), Validators.pattern(this.textPattern) ] ),
       'Username': new FormControl( null, [ Validators.required, Validators.minLength(5)] ),
       'Email': new FormControl( null, [ Validators.required,Validators.pattern(this.emailPattern), Validators.email ] ),
-      'Password': new FormControl( null, [ Validators.required, Validators.minLength(8),Validators. ] ),
+      'Password': new FormControl( null, [ Validators.required, Validators.pattern(this.passwordPattern) ] ),
       'ConfirmPassword': new FormControl( null, [ Validators.required, Validators.minLength(8) ] ),
     })
   }
 
   submitData() {
-<<<<<<< HEAD
     this.http.registerUser(this.userRegistracion.value).subscribe((resp:any) => {
       console.log(resp)
-=======
+    })
     this.http.registerUser(this.userRegistracion.value).subscribe(Res => {
       this.openDialog(Res);
     })
@@ -49,7 +49,6 @@ export class SignupComponent implements OnInit {
   openDialog(Res: any) {
     this.dialogRef.open(ModalComponent, {
       data: Res
->>>>>>> 8e5b6bfaf8450b28ee4cac1209925fb8f883f645
     })
   }
 }

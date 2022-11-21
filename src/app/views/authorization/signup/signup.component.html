@@ -18,7 +18,7 @@
             formControlName="Lastname">
         </section>
     </section>
-    <div class="error">
+    <div class="error errDouble">
         <div>
             <p 
             *ngIf="userRegistracion.get('Firstname').hasError('required') &&
@@ -27,8 +27,9 @@
             <p
             *ngIf="userRegistracion.get('Firstname').invalid &&
             userRegistracion.get('Firstname').dirty && 
-            !userRegistracion.get('Firstname').hasError('required')"
-            >მინიმუმ 2 ასობგერა!</p>
+            !userRegistracion.get('Firstname').hasError('required') || 
+            userRegistracion.get('Lastname').hasError('pattern')"
+            >მინიმუმ 2 სიმბოლო!</p>
         </div>
         <div>
             <p 
@@ -38,8 +39,9 @@
             <p
             *ngIf="userRegistracion.get('Lastname').invalid &&
             userRegistracion.get('Lastname').dirty && 
-            !userRegistracion.get('Lastname').hasError('required')"
-            >მინიმუმ 2 ასობგერა!</p>
+            !userRegistracion.get('Lastname').hasError('required') ||
+            userRegistracion.get('Lastname').hasError('pattern')"
+            >მინიმუმ 2 სიმბოლო!</p>
         </div>
     </div>
     <!-- username field -->
@@ -95,13 +97,9 @@
         *ngIf="userRegistracion.get('Password').hasError('required') &&
         userRegistracion.get('Password').dirty"
         >ველის შევსება აუცილებელია!</p>
-        <p
-        *ngIf="userRegistracion.get('Password').invalid &&
-        userRegistracion.get('Password').dirty && 
-        !userRegistracion.get('Password').hasError('required')"
-        >მინიმუმ 8 სიმბოლო!</p>
-        <p
-        >უნდა შეიცავდეს: 1 დიდ ასოს, 1 პატარა ასოს და 1 ციფრს მაინც!</p>
+        <p *ngIf="userRegistracion.get('Password').hasError('pattern')"
+        >უნდა შედგებოდეს 8 სიმბოლოსგან და შეიცავდეს: 1 დიდი, 1 პატარა, 1 ციფრი!</p>
+        <p>aedaec</p>
     </div>
     <!-- confirm password field -->
     <section class="field"
@@ -123,7 +121,7 @@
         >მინიმუმ 8 ასობგერა!</p>
     </div>
     <!-- submit button field -->
-    <div>
+    <div class="submitBtn">
         <button mat-raised-button color="primary"
         [disabled]="userRegistracion.invalid"
         >რეგისტრაცია</button>
